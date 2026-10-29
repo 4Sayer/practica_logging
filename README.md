@@ -1,6 +1,6 @@
-NOMBRE: [Tu Nombre]
+NOMBRE: Omar Casanova Antúnez
 
-EXPEDIENTE: [Tu Expediente]
+EXPEDIENTE: 225206862
 
 # Práctica guiada: Logging en Java con `java.util.logging`
 
@@ -132,10 +132,19 @@ LOG.info(
 Responder:
 
 1. ¿Qué información adicional muestra el mensaje del Logger?
+Muestra la fecha y la hora exacta, pues entonces también incluye el nombre de la clase y el método ejecutor, lo cual se complementa indicando el nivel del mensaje.
+
 2. ¿Aparece la fecha/hora?
+Sí aparece la fecha y la hora en el registro, lo cual permite ubicar el momento del evento.
+
 3. ¿Aparece el nombre de la clase?
+Sí aparece el nombre de la clase, y ahora también se muestra el método asociado.
+
 4. ¿Aparece el nivel del mensaje?
+Sí aparece el nivel especificado, pues entonces indica claramente que es INFO.
+
 5. ¿Cuál de los dos mecanismos proporciona más información para diagnosticar un problema?
+El Logger proporciona más información, lo cual facilita ubicar el origen exacto del fallo, y ahora se evitan suposiciones innecesarias.
 
 
 ## Parte II. Niveles de logging
@@ -212,13 +221,13 @@ En la siguiente tabla, signar un nivel apropiado a cada situación.
 
 | Situación | Nivel propuesto |
 |---|---|
-| La aplicación inicia correctamente | |
-| No existe el archivo solicitado | |
-| Se procesaron 250 registros | |
-| Se encontró una calificación inválida | |
-| Se cargó `application.properties` | |
-| Se desea conocer el valor de una variable durante depuración | |
-| La aplicación no puede continuar | |
+| La aplicación inicia correctamente | INFO |
+| No existe el archivo solicitado | SEVERE |
+| Se procesaron 250 registros | INFO |
+| Se encontró una calificación inválida | WARNING |
+| Se cargó `application.properties` | CONFIG |
+| Se desea conocer el valor de una variable durante depuración | FINE |
+| La aplicación no puede continuar | SEVERE |
 
 
 
@@ -415,11 +424,11 @@ Completar la siguiente tabla indicando que mensajes se muestran en cada configur
 
 | Configuración | SEVERE | WARNING | INFO | FINE |
 |---|---|---|---|---|
-| `SEVERE` | | | | |
-| `WARNING` | | | | |
-| `INFO` | | | | |
-| `FINE` | | | | |
-| `ALL` | | | | |
+| `SEVERE` | Sí | No | No | No |
+| `WARNING` | Sí | Sí | No | No |
+| `INFO` | Sí | Sí | Sí | No |
+| `FINE` | Sí | Sí | Sí | Sí |
+| `ALL` | Sí | Sí | Sí | Sí |
 
 
 
@@ -522,6 +531,8 @@ LOG.log(
 );
 ```
 
+`LOG.severe(e.getMessage())` solo imprime el mensaje descriptivo del error, pues entonces `LOG.log(Level.SEVERE, "Error al leer archivo", e)` registra la excepción completa junto con su traza de pila (stack trace), lo cual permite localizar con certeza el método y la línea de código donde surgió la anomalía, y ahora se cuenta con un contexto técnico detallado para resolver el fallo.
+
 
 ## Parte VII. Registrar mensajes en un archivo
 
@@ -607,13 +618,13 @@ El archivo tendrá una estructura similar a:
 
 Identificar:
 
-1. Fecha.
-2. Logger.
-3. Nivel.
-4. Clase.
-5. Método.
-6. Hilo.
-7. Mensaje.
+1. Fecha: Se ubica en `<date>`, lo cual indica la marca temporal del evento.
+2. Logger: Se encuentra en `<logger>`, pues entonces identifica el componente emisor.
+3. Nivel: Se halla en `<level>`, lo cual señala la severidad asignada.
+4. Clase: Se define en `<class>`, y ahora muestra el origen de la invocación.
+5. Método: Aparece en `<method>`, pues entonces señala la función ejecutada.
+6. Hilo: Viene en `<thread>`, lo cual expone el identificador del hilo de ejecución.
+7. Mensaje: Se contiene en `<message>`, y ahora almacena la descripción textual registrada.
 
 
 ## Parte VIII. Log en texto plano
@@ -657,11 +668,11 @@ aplicacion.log
 
 | Característica | XML | Texto |
 |---|----|---|
-| Fácil de leer por una persona | | |
-| Fácil de procesar automáticamente | | |
-| Estructura explícita | | |
-| Tamaño más compacto | | |
-| Adecuado para inspección rápida | | |
+| Fácil de leer por una persona | No | Sí |
+| Fácil de procesar automáticamente | Sí | No |
+| Estructura explícita | Sí | No |
+| Tamaño más compacto | No | Sí |
+| Adecuado para inspección rápida | No | Sí |
 
 
 
@@ -989,5 +1000,10 @@ El estudiante deberá entregar:
 - Tabla de niveles completada.
 - Respuestas a la actividad de diagnóstico.
 - Breve explicación de la diferencia entre `Logger`, `Handler`, `Level` y `Formatter`.
+
+### Explicación de la diferencia entre Logger, Handler, Level y Formatter
+
+El `Logger` es la puerta de entrada que captura los registros de la aplicación, pues entonces los canaliza hacia los `Handler` configurados, lo cual permite enviar la salida a múltiples destinos como consola o archivo; y ahora, mediante el `Level` se establece el umbral de severidad para descartar mensajes no deseados, mientras que el `Formatter` se encarga de dar la presentación final, pues entonces define si la salida se representará en texto plano o estructura XML.
+
 
 

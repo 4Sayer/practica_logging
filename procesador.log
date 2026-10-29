@@ -1,0 +1,30 @@
+Oct 29, 2026 3:29:47 PM mx.unison.ProcesadorCalificaciones main
+INFO: Inicio de la aplicación
+Oct 29, 2026 3:29:47 PM mx.unison.ProcesadorCalificaciones main
+CONFIG: Archivo configurado: calificaciones.txt
+Oct 29, 2026 3:29:47 PM mx.unison.ProcesadorCalificaciones procesarArchivo
+FINE: Archivo abierto correctamente
+Oct 29, 2026 3:29:47 PM mx.unison.ProcesadorCalificaciones procesarArchivo
+FINE: Calificación válida: 85
+Oct 29, 2026 3:29:47 PM mx.unison.ProcesadorCalificaciones procesarArchivo
+FINE: Calificación válida: 90
+Oct 29, 2026 3:29:47 PM mx.unison.ProcesadorCalificaciones procesarArchivo
+WARNING: Valor fuera de rango: 120
+Oct 29, 2026 3:29:47 PM mx.unison.ProcesadorCalificaciones procesarArchivo
+WARNING: Valor fuera de rango: -5
+Oct 29, 2026 3:29:47 PM mx.unison.ProcesadorCalificaciones procesarArchivo
+FINE: Calificación válida: 100
+Oct 29, 2026 3:29:47 PM mx.unison.ProcesadorCalificaciones procesarArchivo
+WARNING: Dato no numérico: letras
+Oct 29, 2026 3:29:47 PM mx.unison.ProcesadorCalificaciones procesarArchivo
+FINE: Calificación válida: 75
+Oct 29, 2026 3:29:47 PM mx.unison.ProcesadorCalificaciones procesarArchivo
+INFO: Registros procesados: 7
+Oct 29, 2026 3:29:47 PM mx.unison.ProcesadorCalificaciones procesarArchivo
+INFO: Registros válidos: 4
+Oct 29, 2026 3:29:47 PM mx.unison.ProcesadorCalificaciones procesarArchivo
+INFO: Registros inválidos: 3
+Oct 29, 2026 3:29:47 PM mx.unison.ProcesadorCalificaciones procesarArchivo
+INFO: Promedio: 87.5
+Oct 29, 2026 3:29:47 PM mx.unison.ProcesadorCalificaciones main
+INFO: Fin del procesamiento
